@@ -27,6 +27,9 @@ description: >-
 - references/sdd-handoff-contract.md：规格准备交给 SDD，或需要判断是否达到交接条件时读取。
 - templates/intention-brief.md：需要整理原始意图时读取。
 - templates/specification-brief.md：需要创建规格草案时读取。
+- templates/specification-package.md：规格批准后，需要生成交给 SDD 的 Specification Package 时读取。
+- references/review-strategy.md：需要执行交接审查，或决定脚本与 AI 子审查分工时读取。
+- scripts/validate_specification_package.py：需要做交接文档结构校验时执行。
 - templates/traceability-matrix.md：需要建立追踪矩阵时读取。
 
 ## 工作边界
@@ -45,7 +48,9 @@ description: >-
 2. 澄清 Intention：目标、参与者、场景、约束、成功标准、非目标和未决问题。
 3. 形成 Specification：系统边界、输入输出、行为、规则、失败条件和验收标准。
 4. 选择并审查 Solution Architecture，记录候选方案、取舍和风险。
-5. 判断是否达到 Gate 2；未达到时明确阻塞项，不伪装成可实现。
+5. 读取 references/review-strategy.md，先执行 scripts/validate_specification_package.py 的确定性检查。
+6. 脚本通过后，按任务复杂度调用 AI 子审查；只汇总有证据的语义发现。
+7. 判断是否达到 Gate 2；未达到时明确阻塞项，不伪装成可实现。
 6. 读取 references/sdd-handoff-contract.md，形成版本化的 SDD Handoff。
 7. 将 Handoff 交给 sdd-development；不直接创建实现 issue 或修改代码。
 8. 如果 SDD 反馈规格不可行或不完整，回到 Specification 或 Architecture 重新审查。

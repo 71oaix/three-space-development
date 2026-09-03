@@ -1,1 +1,3 @@
 {"ts":"2026-09-03T00:00:00+08:00","task":"对齐 three-space-development 与 sdd-development 的职责边界和交接契约","success":true,"findings":["三空间 Skill 负责 Problem 到 Solution Architecture","SDD 负责批准规格之后的实现流程","共同接口采用版本化 SDD Handoff Contract"]}
+{"ts":"2026-09-04T00:00:00+08:00","task":"起草 Specification Package 交接模板","success":true,"findings":["模板区分人类填写内容与未来校验字段","SDD 仅在 status=ready 且阻塞项清零后接收"]}
+{"ts":"2026-09-04T00:00:00+08:00","task":"落地脚本与 AI 子审查分工","success":true,"findings":["脚本负责结构和契约一致性","语义与架构问题交给按复杂度调度的 AI 子审查"]}
