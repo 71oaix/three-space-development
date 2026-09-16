@@ -19,6 +19,18 @@ type: reference
 5. 说明推荐方案胜出的条件，以及放弃其他方案的原因。
 6. 将仍需用户决定的取舍单独列出。
 
+## 是否值得创建 ADR
+
+以下启发式改编自 [Matt Pocock 的 domain-modeling ADR 规则](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)。当前在 Three-Space 中属于 `trial`，不是已验证的强制文档规范。
+
+只有以下条件同时满足时，才建议创建 ADR：
+
+1. 决定难以逆转，之后改变的代价明显；
+2. 没有上下文时，未来读者会对这个选择感到意外；
+3. 存在真实可行的替代方案，并且选择来自具体取舍。
+
+否则把决定、理由和替代方案保留在已有的 Specification Package 或 Solution Architecture Decision 中，不为形式完整创建 ADR。需要 ADR 时按项目既有目录和 `doc-contract` 约定 lazy 创建；不擅自引入 Matt 的目录或模板。
+
 ## 禁止
 
 - 把技术偏好伪装成用户需求。

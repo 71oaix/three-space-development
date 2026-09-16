@@ -16,10 +16,13 @@ Problem → Intention → Specification → Solution Architecture
 
 - SKILL.md：触发边界和路由入口；
 - references/：按需加载的深度规则；
+- references/intention-clarification-protocol.md：Intention 的依赖式分轮澄清、事实/决定分工和领域词汇试行协议；
+- references/design-evidence-protocol.md：研究、代码现状、testing seam 和 throwaway prototype 的设计证据试行协议；
+- references/retrospective-protocol.md：trial 机制的按需结构化复盘和晋级判断协议；
 - templates/：意图、规格和追踪模板；
 - gotchas.md：经用户确认的高信号踩坑记录；
-- .run-log.jsonl：append-only 运行日志；
-- examples/：跨项目案例。
+- .run-log.jsonl：append-only 运行日志，使用 trial 机制时可附结构化 `retrospective`；
+- examples/：跨项目案例（当前为空，按需添加）。
 
 ## 源代码与安装副本
 
@@ -43,6 +46,8 @@ C:\Users\10636\.codex\skills\three-space-development
 当前契约文件：
 
 references/sdd-handoff-contract.md
+
+本轮从外部工程实践吸收的协议均保留在 references/，并在文件 frontmatter 或正文标记 `trial`；它们不改变三空间边界，也不替换 Specification Package。
 
 ## GitHub 更新流程
 
