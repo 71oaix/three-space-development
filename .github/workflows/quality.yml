@@ -1,0 +1,32 @@
+name: three-space-quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  three-space-quality:
+    name: three-space-quality
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile validation scripts
+        run: python -m compileall -q scripts
+
+      - name: Validate Specification Package template
+        run: python scripts/validate_specification_package.py templates/specification-package.md --template
+
+      - name: Validate public surface
+        run: python scripts/validate_public_surface.py

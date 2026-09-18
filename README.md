@@ -25,9 +25,9 @@ Problem → Intention → Specification → Solution Architecture
 
 本目录是可编辑、可审阅、可回滚的 Git 源仓库。
 
-运行时安装副本位于：
+运行时安装副本位于 Codex 的用户技能目录：
 
-C:\Users\10636\.codex\skills\three-space-development
+`<Codex skills directory>/three-space-development`
 
 安装副本不直接编辑。源仓库完成合并、验证和版本标记后，才同步安装。
 
@@ -43,6 +43,14 @@ C:\Users\10636\.codex\skills\three-space-development
 当前契约文件：
 
 references/sdd-handoff-contract.md
+
+## 公开仓库治理
+
+- 本仓库是公开的技能源仓库；`main` 只接受通过 PR 和 CI 的变更；
+- 本仓库是可编辑源，Codex 用户技能目录中的副本是安装产物；
+- 不直接编辑运行时副本，也不把其他项目内的旧副本当作维护源；
+- 涉及 Handoff Contract 的 PR 必须说明契约版本、兼容性和对 `sdd-development` 的影响；
+- 合并并验证后才能创建版本标签并同步运行时副本。
 
 ## GitHub 更新流程
 
