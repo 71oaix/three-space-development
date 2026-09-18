@@ -28,9 +28,9 @@ Problem → Intention → Specification → Solution Architecture
 
 本目录是可编辑、可审阅、可回滚的 Git 源仓库。
 
-运行时安装副本位于：
+运行时安装副本位于 Codex 的用户技能目录：
 
-C:\Users\10636\.codex\skills\three-space-development
+`<Codex skills directory>/three-space-development`
 
 安装副本不直接编辑。源仓库完成合并、验证和版本标记后，才同步安装。
 
