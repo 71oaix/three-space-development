@@ -48,9 +48,19 @@ Problem → Intention → Specification → Solution Architecture
 
 references/sdd-handoff-contract.md
 
+## 试行机制
+
 本轮从外部工程实践吸收的协议均保留在 references/，并在文件 frontmatter 或正文标记 `trial`；它们不改变三空间边界，也不替换 Specification Package。
 
 真实项目只有出现具体适用信号时才启用相应 trial 机制，结果写进当次 Intention、Specification 或 Architecture 产物。任务结束时将一次阶段检查和每项适用机制的观察写入该项目的 `.three-space/trial-usage.jsonl`；复盘时汇总多个项目日志，再决定保留、调整或删除。源仓库的维护日志不计入项目效果。
+
+## 公开仓库治理
+
+- 本仓库是公开的技能源仓库；`main` 只接受通过 PR 和 CI 的变更；
+- 本仓库是可编辑源，Codex 用户技能目录中的副本是安装产物；
+- 不直接编辑运行时副本，也不把其他项目内的旧副本当作维护源；
+- 涉及 Handoff Contract 的 PR 必须说明契约版本、兼容性和对 `sdd-development` 的影响；
+- 合并并验证后才能创建版本标签并同步运行时副本。
 
 ## GitHub 更新流程
 
