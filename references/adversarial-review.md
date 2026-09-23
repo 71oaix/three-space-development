@@ -23,6 +23,8 @@ type: reference
 
 以下启发式改编自 [Matt Pocock 的 domain-modeling ADR 规则](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)。当前在 Three-Space 中属于 `trial`，不是已验证的强制文档规范。
 
+当存在影响较大且有真实替代方案的架构决定时，启用 `architecture.adr-heuristic`；记录三个条件的判断，以及创建 ADR 或保留在现有 Architecture Decision 中的理由。仅仅阅读此规则不算一次机制使用。
+
 只有以下条件同时满足时，才建议创建 ADR：
 
 1. 决定难以逆转，之后改变的代价明显；

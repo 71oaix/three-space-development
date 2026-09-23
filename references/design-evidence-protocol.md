@@ -23,6 +23,8 @@ updated: 2026-09-16
 
 没有这些不确定性时，不创建研究笔记、原型或额外的上下文文档。
 
+四种适用信号分别对应 `evidence.research`（外部事实缺口）、`evidence.code-conflict`（现状与目标冲突）、`evidence.testing-seam`（验收观察点不清）和 `evidence.prototype`（具体设计问题经讨论仍无法判断）。启用后应在当前规格或架构产物中留下来源、冲突、可观察边界或实验结论；只读取本文件不算使用机制。
+
 ## 1. 研究事实：Agent 调查，用户决定取舍
 
 本协议不新增搜索入口，也不替代已有的 `web`、`read`、`learn` 或 `openai-docs` 能力；它只规定进入 Three-Space 的证据如何被记录和使用。

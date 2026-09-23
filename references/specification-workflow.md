@@ -20,6 +20,7 @@ type: reference
 4. 列出歧义、冲突、缺失信息和需要用户决定的事项。
 5. 如果存在依赖关系，按 references/intention-clarification-protocol.md 的 frontier 先完成会阻塞后续判断的 Intention 决策。
 6. 将已经确认的 Intention 决定直接综合为候选 Specification，不重复询问已经 settled 的问题；只重新打开会改变边界、行为、失败处理、验收或高层架构的事项。
+   只有实际复用了已确认决定并减少重复提问时，才将 `spec.no-repeat` 记为已使用；记录对应的决定与规格条目。
 7. 形成输入、输出、状态、规则、失败行为和验收标准。
 8. 标注每项规格的来源和决策状态：Fact、Agent Recommendation、User Decision、Assumption 或 Open Decision。
 9. 如需外部事实、代码现状、testing seam 或 prototype，读取 references/design-evidence-protocol.md；证据用于支持判断，不替代用户批准。

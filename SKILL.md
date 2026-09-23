@@ -15,7 +15,7 @@ description: >-
 ### 必须读取
 
 - gotchas.md：执行前读取，了解已经确认的高频坑点。
-- .run-log.jsonl：只作为 append-only 操作日志；正常运行不注入上下文，复盘时按 retrospective-protocol.md 按需读取。
+- .run-log.jsonl：源仓库维护日志；普通项目运行不写入，也不注入上下文。
 
 ### 按需读取
 
@@ -24,7 +24,7 @@ description: >-
 - references/specification-workflow.md：需要把意图整理成规格时读取。
 - references/intention-clarification-protocol.md：Intention 存在未决分支、重要取舍、领域术语歧义，或需要分轮澄清时读取。
 - references/design-evidence-protocol.md：需要调查事实、核对代码现状、确定可观察 testing seam，或用 throwaway prototype 降低设计不确定性时读取。
-- references/retrospective-protocol.md：本次使用 trial 机制、修改本 Skill 的机制，或完成任务后需要结构化复盘时读取。
+- references/retrospective-protocol.md：试行机制出现适用信号、任务结束时记录使用情况，或汇总真实项目效果时读取。
 - references/adversarial-review.md：存在多个方案、风险或重要架构决策时读取。
 - references/traceability.md：需要连接意图、规格、测试和实现时读取。
 - references/sdd-handoff-contract.md：规格准备交给 SDD，或需要判断是否达到交接条件时读取。
@@ -33,6 +33,7 @@ description: >-
 - templates/specification-package.md：规格批准后，需要生成交给 SDD 的 Specification Package 时读取。
 - references/review-strategy.md：需要执行交接审查，或决定脚本与 AI 子审查分工时读取。
 - scripts/validate_specification_package.py：需要做交接文档结构校验时执行。
+- scripts/trial_usage.py：真实项目触发试行机制后，用于追加、校验和汇总项目内的使用记录。
 - templates/traceability-matrix.md：需要建立追踪矩阵时读取。
 
 ## 工作边界
@@ -47,6 +48,10 @@ description: >-
 - 规格达到 Gate 2 后，按 sdd-handoff-contract.md 生成 handoff，交给 sdd-development。
 - 已经明确的需求若只需要 issue、plan、实现、调试或交付，不触发本 Skill。
 
+在 Intention、Specification、Architecture 各阶段入口检查对应的试行机制适用信号；命中时读取相关 reference，并把实际判断或证据写进当前产物，让用户看见结果。离开阶段时检查是否漏掉已出现的信号；没有命中时不为了凑齐机制而启用它。
+
+进入 Specification 前，给出可供用户纠正的 Intention 摘要；将用户已确认的决定直接用于候选规格，只重新询问新出现的歧义。
+
 ## 生命周期工作流
 
 1. 发现并界定问题，区分真实问题和预设技术方案。
@@ -60,7 +65,7 @@ description: >-
 9. 将 Handoff 交给 sdd-development；不直接创建实现 issue 或修改代码。
 10. 如果 SDD 反馈规格不可行或不完整，回到 Specification 或 Architecture 重新审查。
 11. 完成任务后检查是否发现新的候选 gotcha，并询问用户是否确认记录。
-12. 追加一条 .run-log.jsonl，记录任务、成功状态和关键发现；本次实际使用 trial 机制或改动机制时，按 retrospective-protocol.md 追加结构化复盘。
+12. 真实项目任务结束时，按 retrospective-protocol.md 记录一次阶段信号检查；每个适用机制再留一条独立观察。任务允许写入项目时持久化，纯问答或只读任务只在交付中说明。维护本 Skill 时才追加源仓库 .run-log.jsonl。
 
 ## 输出要求
 
@@ -107,4 +112,4 @@ description: >-
 
 累计约 10 条运行日志后，询问用户是否需要将日志提炼为新的 gotcha 或经验库条目。
 
-复盘记录用于观察 trial 机制的实际效果，不自动把 trial 升级为正式规则。
+项目试用记录用于观察 trial 机制的实际效果，不自动把 trial 升级为正式规则。

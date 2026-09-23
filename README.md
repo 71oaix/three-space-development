@@ -18,10 +18,11 @@ Problem → Intention → Specification → Solution Architecture
 - references/：按需加载的深度规则；
 - references/intention-clarification-protocol.md：Intention 的依赖式分轮澄清、事实/决定分工和领域词汇试行协议；
 - references/design-evidence-protocol.md：研究、代码现状、testing seam 和 throwaway prototype 的设计证据试行协议；
-- references/retrospective-protocol.md：trial 机制的按需结构化复盘和晋级判断协议；
+- references/retrospective-protocol.md：trial 机制的触发痕迹、真实项目记录和晋级判断协议；
 - templates/：意图、规格和追踪模板；
 - gotchas.md：经用户确认的高信号踩坑记录；
-- .run-log.jsonl：append-only 运行日志，使用 trial 机制时可附结构化 `retrospective`；
+- scripts/trial_usage.py：追加、校验和汇总真实项目中的 trial 使用记录；
+- .run-log.jsonl：本 Skill 源仓库的 append-only 维护日志，不作为真实项目效果样本；
 - examples/：跨项目案例（当前为空，按需添加）。
 
 ## 源代码与安装副本
@@ -48,6 +49,8 @@ Problem → Intention → Specification → Solution Architecture
 references/sdd-handoff-contract.md
 
 本轮从外部工程实践吸收的协议均保留在 references/，并在文件 frontmatter 或正文标记 `trial`；它们不改变三空间边界，也不替换 Specification Package。
+
+真实项目只有出现具体适用信号时才启用相应 trial 机制，结果写进当次 Intention、Specification 或 Architecture 产物。任务结束时将一次阶段检查和每项适用机制的观察写入该项目的 `.three-space/trial-usage.jsonl`；复盘时汇总多个项目日志，再决定保留、调整或删除。源仓库的维护日志不计入项目效果。
 
 ## GitHub 更新流程
 
